@@ -13,6 +13,9 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        poppins: ["Poppins"],
+      },
       colors: {
         black14: '#141414',
         black17: '#171717',
@@ -28,7 +31,8 @@ const config: Config = {
         gray23: '#232323',
         gray7F: '#7f7f7f',
         grayBG: '#CCCCCC',
-        greenB7Uploads: '#20c982',
+        greenFocus: '#20c982',
+        greenBgFocus: '#15231d',
       }
     },
   },
