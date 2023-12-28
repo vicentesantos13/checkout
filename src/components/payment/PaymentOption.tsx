@@ -1,5 +1,4 @@
 "use client";
-import { usePayment } from "@/context/Context";
 import { ReactHookFormType } from "@/types/ReactHookForm";
 import Image from "next/image";
 
@@ -10,7 +9,6 @@ export const PaymentOption = ({
   errors,
   value,
 }: PaymentOptionPros) => {
-
   return (
     <div className="border border-gray3D rounded h-[72px] w-full sm:w-[48%] mt-7 sm:mt-0 px-6 flex justify-between items-center focus-within:border-greenFocus focus-within:bg-greenBgFocus">
       <div className="flex items-center">
@@ -26,7 +24,7 @@ export const PaymentOption = ({
         className="aspect-square w-8  accent-greenFocus"
         value={value}
         {...register("payment.method")}
-        defaultChecked={value==='pix'}
+        defaultChecked={value === "pix"}
       />
     </div>
   );

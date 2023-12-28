@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+
+
  const CheckoutFormSchema = z.object({
     name: z
       .string()
@@ -76,7 +78,7 @@ import { z } from "zod";
         const numericValue = parseInt(value, 10);
         return !isNaN(numericValue) && numericValue >= 1;
       },
-      { message: "Informe um NÚMERO maior de 0." }
+      { message: "Informe um NÚMERO maior que 0." }
     ),
     complement: z.string().optional(),
     shipping: z.enum(["toGo", "pickUp"], {
@@ -84,11 +86,11 @@ import { z } from "zod";
     }),
     payment: z
       .object({
-        method: z.literal("pix", { invalid_type_error: "Bla bla" }),
+        method: z.literal("pix", { invalid_type_error: "Informe uma opção de pagamento." }),
       })
       .or(
         z.object({
-          method: z.literal("card", { invalid_type_error: "Bla bla" }),
+          method: z.literal("card", { invalid_type_error:"Informe uma opção de pagamento." }),
           cardNumber: z.string().refine((value) => /^\d{16}$/i.test(value), {
             message: "Informe um número de cartão válido (16 dígitos)",
           }),

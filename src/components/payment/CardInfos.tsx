@@ -1,7 +1,23 @@
-import { ReactHookFormType } from "@/types/ReactHookForm";
+//import { ReactHookFormType } from "@/types/ReactHookForm";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+
+interface PaymentForm {
+  method: string;
+  cardNumber?: string;
+  expiration?: string;
+  cvv?: string;
+}
+
+interface FormValues extends FieldValues {
+  payment: PaymentForm;
+}
+interface ReactHookFormType {
+  register: UseFormRegister<FormValues | FieldValues> ;
+  errors: FieldErrors<FormValues>;
+}
 
 
-export const CardInfos = ({ register, errors }: ReactHookFormType) => {
+export const CardInfos:React.FC<ReactHookFormType> = ({ register, errors }) => {
   return (
     <div className="sm:flex sm:justify-between mt-7">
       <div className="w-full sm:w-[48%]">
