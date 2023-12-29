@@ -1,4 +1,5 @@
 import { ReactHookFormType } from "@/types/ReactHookForm";
+import { Textinput } from "../Textinput";
 
 export const Name = ({ register, errors }: ReactHookFormType) => {
   return (
@@ -13,11 +14,10 @@ export const Name = ({ register, errors }: ReactHookFormType) => {
         <legend className="text-xs sm:text-base text-gray7F ml-5 px-1">
           Nome
         </legend>
-        <input
-          type="text"
-          className="bg-inherit text-white placeholder:text-gray7F outline-none ml-6 w-11/12 h-full"
+        <Textinput
+          register={register}
+          field="name"
           placeholder="Informe seu nome"
-          {...register("name")}
         />
       </fieldset>
       {errors.name && (

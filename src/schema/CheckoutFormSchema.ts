@@ -1,3 +1,4 @@
+import { states } from "@/data/states";
 import { z } from "zod";
 
 
@@ -18,35 +19,7 @@ import { z } from "zod";
       .string()
       .refine(
         (value) =>
-          [
-            "AC",
-            "AL",
-            "AP",
-            "AM",
-            "BA",
-            "CE",
-            "ES",
-            "GO",
-            "MA",
-            "MT",
-            "MS",
-            "MG",
-            "PA",
-            "PB",
-            "PR",
-            "PE",
-            "PI",
-            "RJ",
-            "RN",
-            "RS",
-            "RO",
-            "RR",
-            "SC",
-            "SP",
-            "SE",
-            "TO",
-            "DF",
-          ].includes(value.toUpperCase()),
+          states.includes(value.toUpperCase()),
         { message: "Informe um estado válido (Ex.: PB)" }
       ),
     city: z
