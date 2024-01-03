@@ -1,5 +1,4 @@
 import { TextinputType } from "@/types/Textinput"
-import { FieldValues, UseFormRegister } from "react-hook-form"
 
 export const Textinput = ({register,field,placeholder}:TextinputType)=>{
     return(
