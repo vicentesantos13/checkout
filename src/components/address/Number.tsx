@@ -8,10 +8,10 @@ export const Number = ({ register, errors }: ReactHookFormType) => {
         className={`border ${
           errors.number
             ? "border-red-700 focus-within:border-red-700"
-            : "border-gray3D focus-within:border-greenFocus "
+            : "border-neutral-700 focus-within:border-emerald-500 "
         } rounded h-[72px] flex items-center  `}
       >
-        <legend className="text-xs sm:text-base text-gray7F ml-5 px-1">
+        <legend className="text-xs sm:text-base text-zinc-500 ml-5 px-1">
           Número
         </legend>
         <Textinput register={register} field="number" placeholder="Número" />
